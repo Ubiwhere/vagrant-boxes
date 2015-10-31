@@ -8,7 +8,3 @@ sudo apt-get -y install postgresql postgresql-contrib libpq-dev postgresql-serve
 sudo apt-get -y install apache2 libapache2-mod-php5
 sudo apt-get -y install php5-gd php5-json php5-pgsql php5-curl
 sudo apt-get -y install php5-intl php5-mcrypt php5-imagick
-
-# Set logging permissions
-# sudo touch /var/log/sgsw_api.log
-# sudo chmod o+w /var/log/sgsw_api.log
