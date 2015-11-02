@@ -28,14 +28,14 @@ Once the machine is booted and provisioned the only thing left to do is `vagrant
 
 #### Installing Owncloud:
 
-1. `vagrant ssh`
-2. `cd /var/www/core/`
-3. `sudo mkdir data`
-4. `sudo touch data/.htaccess && sudo touch data/.ocdata`
-5. `cd ..`
-6. `sudo sh write2configdir.sh` [Setting Strong Directory Permissions](https://doc.owncloud.org/server/9.0/admin_manual/installation/installation_wizard.html#setting-strong-directory-permissions)
-7. `CTRD + D` (Exist the vagrant machine)
-8. `vagrant reload`
+1. `git clone git@github.com:Ubiwhere/vagrant-boxes.git`
+2. `cd vagrant-boxes/owncloud/` (This might take a while. When cloning the repo it might look that it froze but it didn't)
+3. `vagrant up`
+
+### Credentials
+ - Database User: vagrant
+ - Database Password: vagrant
+ - Database Name: owncloud_db
 
 You should now be able to access the owncloud service through http://10.0.0.100/core
 
@@ -47,6 +47,3 @@ You should now be able to access the owncloud service through http://10.0.0.100/
 - Apache 2.4.7
 - PostgreSQL 9.3.10
 - ownCloud development tool (ocdev)
-
-The PostgreSQL default username:password is `postgres:admin`.
-The Owncloud default username:password is `admin:123qwe`.
