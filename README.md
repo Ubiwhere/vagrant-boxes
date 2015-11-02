@@ -24,15 +24,29 @@ vagrant up
 ```
 ### Owncloud Installation
 
-Once the machine is booted and provisioned the only thing left to do is `vagrant ssh` into the machine and use the pre-installed [ocdev](https://github.com/owncloud/ocdev) development tool to install owncloud or clone the desired repository into the shared folder (in this case the content in [owncloud]https://github.com/owncloud/core)).
+Once the machine is booted and provisioned the only thing left to do is `vagrant ssh` into the machine and use the already cloned [owncloud]https://github.com/owncloud/core) repository.
 
-#### Installing from OCDEV Development Tool:
+#### Installing Owncloud:
 
 1. `vagrant ssh`
-2. `cd /var/www/`
-3. `ocdev setup base`
-4. `sudo sh write2configdir.sh` [Setting Strong Directory Permissions](https://doc.owncloud.org/server/9.0/admin_manual/installation/installation_wizard.html#setting-strong-directory-permissions)
-5. `CTRD + D` (Exist the vagrant machine)
-6. `vagrant reload`
+2. `cd /var/www/core/`
+3. `sudo mkdir data`
+4. `sudo touch data/.htaccess && sudo touch data/.ocdata`
+5. `cd ..`
+6. `sudo sh write2configdir.sh` [Setting Strong Directory Permissions](https://doc.owncloud.org/server/9.0/admin_manual/installation/installation_wizard.html#setting-strong-directory-permissions)
+7. `CTRD + D` (Exist the vagrant machine)
+8. `vagrant reload`
 
 You should now be able to access the owncloud service through http://10.0.0.100/core
+
+#### Box Content:
+
+- Ubuntu 14.04.3 LTS
+- PHP 5.5.9
+- Python 3.4.3
+- Apache 2.4.7
+- PostgreSQL 9.3.10
+- ownCloud development tool (ocdev)
+
+The PostgreSQL default username:password is `postgres:admin`.
+The Owncloud default username:password is `admin:123qwe`.
