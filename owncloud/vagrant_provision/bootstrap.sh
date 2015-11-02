@@ -9,4 +9,13 @@ sudo apt-get -y install apache2 libapache2-mod-php5
 sudo apt-get -y install php5-gd php5-json php5-pgsql php5-curl
 sudo apt-get -y install php5-intl php5-mcrypt php5-imagick
 
-cd /var/www/ && cp -avr data/ core/
+# Create PosgreSQL User and Database
+sudo su postgres -c "psql -c \"CREATE ROLE vagrant SUPERUSER LOGIN PASSWORD 'vagrant'\" "
+sudo su postgres -c "createdb -E UTF8 -T template0 --locale=en_US.utf8 -O vagrant owncloud_db"
+
+# Install Owncloud
+cd /var/www/
+ocdev setup base
+cp -avr data/ core/
+sudo sh write2configdir.sh
+sudo service apache2 restart
