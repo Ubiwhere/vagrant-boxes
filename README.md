@@ -28,8 +28,8 @@ Once the machine is booted and provisioned the only thing left to do is `vagrant
 
 #### Installing Owncloud:
 
-1. `git clone git@github.com:Ubiwhere/vagrant-boxes.git`
-2. `cd vagrant-boxes/owncloud/` (This might take a while. When cloning the repo it might look that it froze but it didn't)
+1. `git clone git@github.com:Ubiwhere/vagrant-boxes.git` (This might take a while. When cloning the repo it might look that it froze but it didn't)
+2. `cd vagrant-boxes/owncloud/`
 3. `vagrant up`
 
 ### Credentials
